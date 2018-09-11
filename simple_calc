@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+print "Supply a simple expression: "
+expression = gets.chomp.gsub(/\s/, '')
+matched = /[+\-*\/%]/.match(expression)
+first = matched.pre_match.to_i
+second = matched.post_match.to_i
+case matched.to_s
+when "+" then puts first + second
+when "-" then puts first - second
+when "*" then puts first * second
+when "/" then puts first / second
+when "%" then puts first % second
+end
