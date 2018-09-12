@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+print "Starting weight and unit (lb or kg): "
+input = gets.chomp
+
+starting_weight = input.to_i
+if /lb/ =~ input
+  conversion = 0.453592
+  target_unit = "kg"
+elsif /kg/ =~ input
+  conversion = 2.204623
+  target_unit = "lb"
+else
+  puts "Unrecognized entry"
+  exit(1)
+end
+
+puts "#{input} = #{starting_weight * conversion} #{target_unit}"
+
